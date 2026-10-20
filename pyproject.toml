@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "diffrocket"
+dynamic = ["version"]
+description = "A differentiable 6-DOF rocket flight simulator built on JAX."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Nihal Gummadala" }]
+requires-python = ">=3.10"
+dependencies = [
+    "jax>=0.4.30",
+    "numpy>=1.26",
+]
+keywords = ["rocket", "rocketry", "simulation", "jax", "differentiable", "aerospace"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "matplotlib>=3.8"]
+
+[project.urls]
+Homepage = "https://github.com/YOUR-USERNAME/diffrocket"
+Issues = "https://github.com/YOUR-USERNAME/diffrocket/issues"
+
+[tool.hatch.version]
+path = "src/diffrocket/__init__.py"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
